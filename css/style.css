@@ -437,9 +437,11 @@ main {
 }
 
 .ideas-intro {
-  font-size: 0.95rem;
-  color: var(--ink-3);
-  line-height: 1.72;
+  font-family: var(--serif);
+  font-size: 1.14rem;
+  font-weight: 300;
+  line-height: 1.82;
+  color: var(--ink-2);
   margin-bottom: 40px;
   max-width: 440px;
 }
