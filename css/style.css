@@ -151,7 +151,7 @@ nav::after {
 .nav-logo {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -167,11 +167,11 @@ nav::after {
 }
 
 .nav-links a {
-  font-family: var(--mono);
-  font-weight: 300;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--ink-3);
   text-decoration: none;
   transition: color 0.2s;
@@ -202,9 +202,10 @@ nav::after {
   cursor: pointer;
   padding: 5px 14px;
   color: var(--ink-3);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -275,7 +276,7 @@ main {
   top: 20px;
   right: 24px;
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.64rem;
   color: var(--ink-5);
   letter-spacing: 0.04em;
 }
@@ -283,8 +284,8 @@ main {
 .card-label {
   display: block;
   font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ochre);
   margin-bottom: 18px;
@@ -292,9 +293,9 @@ main {
 
 .card-body p {
   font-family: var(--sans);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.78;
   color: var(--ink-2);
   margin-bottom: 0;
 }
@@ -307,18 +308,18 @@ main {
 .card-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.09em;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--ochre);
   text-decoration: none;
-  margin-top: 18px;
-  opacity: 0.85;
-  transition: gap 0.2s var(--ease), opacity 0.2s;
+  margin-top: 20px;
+  transition: gap 0.2s var(--ease), color 0.2s;
 }
-.card-link:hover { gap: 9px; opacity: 1; }
-.card-link svg { width: 11px; height: 11px; }
+.card-link:hover { gap: 10px; color: var(--ochre-mid); }
+.card-link svg { width: 13px; height: 13px; }
 
 /* Home footer */
 .home-footer {
@@ -332,9 +333,9 @@ main {
 
 .footer-copy {
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   color: var(--ink-5);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .footer-socials {
@@ -344,10 +345,10 @@ main {
 
 .footer-socials a {
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   color: var(--ink-4);
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   transition: color 0.2s;
 }
 .footer-socials a:hover { color: var(--ochre); }
@@ -367,8 +368,8 @@ main {
 
 .page-hed-label {
   font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ochre);
   display: block;
@@ -388,7 +389,7 @@ main {
 
 .about-lede {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.14rem;
   font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
@@ -404,8 +405,8 @@ main {
 
 .about-section-label {
   font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.13em;
+  font-size: 0.68rem;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--ink-4);
   display: block;
@@ -413,8 +414,8 @@ main {
 }
 
 .about-section p {
-  font-size: 0.9rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.78;
   color: var(--ink-2);
   margin-bottom: 0.55rem;
 }
@@ -436,11 +437,11 @@ main {
 }
 
 .ideas-intro {
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   color: var(--ink-3);
-  line-height: 1.65;
+  line-height: 1.72;
   margin-bottom: 40px;
-  max-width: 420px;
+  max-width: 440px;
 }
 
 .essay-list { border-top: 1px solid var(--border-soft); }
@@ -464,9 +465,9 @@ main {
 
 .essay-date {
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   color: var(--ink-4);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
   padding-top: 2px;
 }
@@ -482,8 +483,8 @@ main {
 
 .essay-tag {
   font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-4);
   text-align: right;
@@ -492,9 +493,9 @@ main {
 
 .essay-desc {
   grid-column: 2;
-  font-size: 0.78rem;
-  color: var(--ink-4);
-  line-height: 1.5;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  line-height: 1.55;
   margin-top: 2px;
 }
 
@@ -520,9 +521,9 @@ main {
 
 .essay-meta span {
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   color: var(--ink-4);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .essay-meta .sep {
@@ -546,9 +547,9 @@ main {
 .essay-lede {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--ink-3);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .essay-body {
@@ -563,9 +564,9 @@ main {
 
 .essay-body h2 {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--ochre);
   margin-top: 3rem;
@@ -600,9 +601,10 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--mono);
-  font-size: 0.63rem;
-  letter-spacing: 0.09em;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--ink-4);
   text-decoration: none;
   transition: color 0.2s, gap 0.2s;
@@ -619,7 +621,7 @@ main {
 
 .contact-lede {
   font-family: var(--serif);
-  font-size: 1.08rem;
+  font-size: 1.14rem;
   font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
@@ -639,14 +641,14 @@ main {
 
 .contact-row-label {
   font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.11em;
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--ink-4);
 }
 
 .contact-row-val a {
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   color: var(--ink-2);
   text-decoration: none;
   border-bottom: 1px solid transparent;
