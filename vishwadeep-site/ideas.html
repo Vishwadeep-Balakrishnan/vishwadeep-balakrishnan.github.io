@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideas — Vishwadeep Balakrishnan</title>
+  <meta name="description" content="Essays and white papers on AI, technology investing, and global macro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Vishwadeep Balakrishnan</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="ideas.html">Ideas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="toggle-icon">◐</span>
+            <span class="toggle-label">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="ideas-wrap">
+
+      <div class="page-hed fade-up fade-up-0">
+        <span class="page-hed-label">Ideas</span>
+        <h1>Essays &amp; <em>white papers.</em></h1>
+      </div>
+
+      <p class="ideas-intro fade-up fade-up-1">
+        Longer-form thinking on AI, technology investing, and philanthropy.
+        Written for myself first — to understand something — and published
+        in case it's useful to others.
+      </p>
+
+      <!--
+        HOW TO ADD AN ESSAY:
+        1. Write your essay as a .md file in _essays/ (use _essays/_template.md as a guide)
+        2. Add a new entry in js/essays-data.js following the existing format
+        3. Push — it appears here automatically, sorted by date
+
+        Essays are rendered by js/main.js from the ESSAYS array in js/essays-data.js
+      -->
+
+      <div class="essay-list fade-up fade-up-2" id="essay-list">
+        <p style="color:var(--ink-4); font-family:var(--mono); font-size:0.72rem; padding:24px 0; letter-spacing:0.06em;">loading…</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/essays-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

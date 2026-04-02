@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essay — Vishwadeep Balakrishnan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Vishwadeep Balakrishnan</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="ideas.html">Ideas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="toggle-icon">◐</span>
+            <span class="toggle-label">Dark</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="essay-wrap">
+
+      <div class="essay-header fade-up fade-up-0">
+        <div class="essay-meta">
+          <span id="essay-date"></span>
+          <span class="sep"></span>
+          <span id="essay-tag-display"></span>
+        </div>
+        <h1 id="essay-title"></h1>
+        <p class="essay-lede" id="essay-lede"></p>
+      </div>
+
+      <div class="essay-body fade-up fade-up-1" id="essay-content">
+        <p style="color:var(--ink-4); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em;">loading…</p>
+      </div>
+
+      <div class="essay-footer fade-up fade-up-2">
+        <a href="ideas.html" class="back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 6H2M6 10L2 6l4-4"/>
+          </svg>
+          Back to Ideas
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/essays-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
