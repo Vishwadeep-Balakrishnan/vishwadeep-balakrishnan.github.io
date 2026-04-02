@@ -10,12 +10,15 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/theme.js"></script>
 </head>
-<body>
+<body class="is-home">
+
+  <div class="page-border">
 
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Vishwadeep Balakrishnan</a>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="ideas.html">Ideas</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -30,55 +33,60 @@
   </nav>
 
   <main>
-    <section class="home-intro">
+    <section class="home-board fade-up fade-up-0">
 
-      <div class="intro-blocks">
+      <div class="board-grid">
 
-        <div class="intro-block fade-up fade-up-1">
-          <span class="intro-block-label">Research</span>
-          <div class="intro-block-content">
+        <div class="board-card fade-up fade-up-1">
+          <span class="card-num">01</span>
+          <span class="card-label">Research</span>
+          <div class="card-body">
             <p>I do independent AI research — focused on alignment, oversight, and the long-horizon questions that the market doesn't fund. I publish papers and essays on what I find.</p>
-            <a href="ideas.html" class="cta-link">Read my essays <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+            <a href="ideas.html" class="card-link">Read my essays <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
           </div>
         </div>
 
-        <div class="intro-block fade-up fade-up-2">
-          <span class="intro-block-label">Advocacy</span>
-          <div class="intro-block-content">
+        <div class="board-card fade-up fade-up-2">
+          <span class="card-num">02</span>
+          <span class="card-label">Advocacy</span>
+          <div class="card-body">
             <p>I run a non-profit advocacy organisation using a hits-based giving framework — concentrating resources on the researchers and interventions most likely to matter at civilisational scale, rather than spreading thinly across legible causes.</p>
           </div>
         </div>
 
-        <div class="intro-block fade-up fade-up-3">
-          <span class="intro-block-label">Building</span>
-          <div class="intro-block-content">
+        <div class="board-card fade-up fade-up-3">
+          <span class="card-num">03</span>
+          <span class="card-label">Building</span>
+          <div class="card-body">
             <p>Currently building <strong>[Startup]</strong> — and serving as a venture builder at <strong>Drexel VCC</strong>, where we help founders develop robust businesses at the earliest stages.</p>
           </div>
         </div>
 
-        <div class="intro-block fade-up fade-up-4">
-          <span class="intro-block-label">Writing</span>
-          <div class="intro-block-content">
+        <div class="board-card fade-up fade-up-4">
+          <span class="card-num">04</span>
+          <span class="card-label">Writing</span>
+          <div class="card-body">
             <p>I write about global macro and technology investing on Substack — where central bank policy meets software multiples, and where structural shifts create durable asymmetries.</p>
-            <a href="https://substack.com/@vishwadeep" target="_blank" rel="noopener" class="cta-link">Read on Substack <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
-          </div>
-        </div>
-
-        <div class="intro-block fade-up fade-up-5">
-          <span class="intro-block-label">Consulting</span>
-          <div class="intro-block-content">
-            <p>I help startups with growth strategy, go-to-market, business model design, and financing — bringing both operator and investor perspectives to every engagement.</p>
-            <a href="https://calendly.com/vishwadeep" target="_blank" rel="noopener" class="cta-link">Book an intro call <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+            <a href="https://substack.com/@vishwadeep" target="_blank" rel="noopener" class="card-link">Read on Substack <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
           </div>
         </div>
 
       </div>
 
+      <div class="board-card board-card--full fade-up fade-up-5">
+        <span class="card-num">05</span>
+        <span class="card-label">Consulting</span>
+        <div class="card-body">
+          <p>I help startups with growth strategy, go-to-market, business model design, and financing — bringing both operator and investor perspectives to every engagement.</p>
+          <a href="https://calendly.com/vishwadeep" target="_blank" rel="noopener" class="card-link">Book an intro call <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
     </section>
 
     <footer class="home-footer">
-      <p class="footer-note">© 2025 Vishwadeep Balakrishnan</p>
-      <div class="footer-links">
+      <p class="footer-copy">© 2025</p>
+      <div class="footer-socials">
         <a href="https://twitter.com/vishwadeep" target="_blank" rel="noopener">Twitter</a>
         <a href="https://linkedin.com/in/vishwadeep" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://substack.com/@vishwadeep" target="_blank" rel="noopener">Substack</a>
@@ -86,6 +94,8 @@
     </footer>
 
   </main>
+
+  </div>
 
   <script src="js/essays-data.js"></script>
   <script src="js/main.js"></script>
