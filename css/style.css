@@ -150,9 +150,9 @@ nav::after {
 
 .nav-logo {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.12rem;
-  letter-spacing: 0.01em;
+  font-weight: 300;
+  font-size: 1.24rem;
+  letter-spacing: 0.025em;
   color: var(--ink);
   text-decoration: none;
   transition: color 0.2s;
@@ -163,15 +163,15 @@ nav::after {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .nav-links a {
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 0.84rem;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: var(--ink-3);
   text-decoration: none;
   transition: color 0.2s;
@@ -182,7 +182,7 @@ nav::after {
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  bottom: -3px;
   left: 0; right: 100%;
   height: 1px;
   background: var(--ochre);
@@ -202,10 +202,11 @@ nav::after {
   cursor: pointer;
   padding: 5px 14px;
   color: var(--ink-3);
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -215,7 +216,7 @@ nav::after {
   color: var(--ochre);
   border-color: var(--ochre-pale);
 }
-.toggle-icon { font-size: 0.8rem; line-height: 1; }
+.toggle-icon { font-size: 0.78rem; line-height: 1; }
 
 /* ── Layout ── */
 main {
@@ -684,6 +685,10 @@ main {
 @media (max-width: 580px) {
   :root { --pad-x: 22px; --nav-h: 52px; }
   html { font-size: 15px; }
+  .nav-logo { font-size: 1.1rem; letter-spacing: 0.015em; }
+  .nav-links { gap: 1.4rem; }
+  .nav-links a { font-size: 0.7rem; letter-spacing: 0.06em; }
+  .theme-toggle { font-size: 0.62rem; padding: 4px 10px; }
   .board-grid { grid-template-columns: 1fr; }
   .board-grid .board-card:nth-child(odd) { border-right: none; }
   .board-card { padding: 28px 24px 32px; }
