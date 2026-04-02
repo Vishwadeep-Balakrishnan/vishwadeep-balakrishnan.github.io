@@ -443,7 +443,6 @@ main {
   line-height: 1.82;
   color: var(--ink-2);
   margin-bottom: 40px;
-  max-width: 440px;
 }
 
 .essay-list { border-top: 1px solid var(--border-soft); }
@@ -618,7 +617,6 @@ main {
 .contact-wrap {
   padding-top: 64px;
   padding-bottom: 64px;
-  max-width: 480px;
 }
 
 .contact-lede {
@@ -627,10 +625,10 @@ main {
   font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
-  margin-bottom: 44px;
+  margin-bottom: 40px;
 }
 
-.contact-rows { border-top: 1px solid var(--border-soft); }
+.contact-rows { border-top: 1px solid var(--border-soft); max-width: 480px; }
 
 .contact-row {
   display: grid;
