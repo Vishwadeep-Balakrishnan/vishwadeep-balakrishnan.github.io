@@ -451,8 +451,8 @@ main {
   display: grid;
   grid-template-columns: 72px 1fr 60px;
   gap: 14px 18px;
-  align-items: baseline;
-  padding: 18px 12px;
+  align-items: start;
+  padding: 22px 12px;
   border-bottom: 1px solid var(--border-soft);
   text-decoration: none;
   color: inherit;
@@ -470,15 +470,17 @@ main {
   color: var(--ink-4);
   letter-spacing: 0.03em;
   white-space: nowrap;
-  padding-top: 2px;
+  padding-top: 5px;
 }
 
 .essay-title {
+  display: block;
   font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: var(--ink);
   line-height: 1.35;
+  letter-spacing: -0.01em;
   transition: color 0.2s;
 }
 
@@ -489,15 +491,17 @@ main {
   text-transform: uppercase;
   color: var(--ink-4);
   text-align: right;
-  padding-top: 3px;
+  padding-top: 5px;
 }
 
 .essay-desc {
-  grid-column: 2;
-  font-size: 0.85rem;
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  font-weight: 300;
   color: var(--ink-3);
-  line-height: 1.55;
-  margin-top: 2px;
+  line-height: 1.6;
+  margin-top: 6px;
 }
 
 /* ── ESSAY ARTICLE ── */
@@ -537,31 +541,31 @@ main {
 
 .essay-header h1 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 4vw, 2.3rem);
-  font-weight: 300;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
   color: var(--ink);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .essay-lede {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   color: var(--ink-3);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .essay-body {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.92;
   color: var(--ink-2);
 }
 
-.essay-body p { margin-bottom: 1.4rem; }
+.essay-body p { margin-bottom: 1.6rem; }
 
 .essay-body h2 {
   font-family: var(--mono);
@@ -694,7 +698,6 @@ main {
   .board-card--full { padding: 28px 24px 32px; }
   .essay-item { grid-template-columns: 1fr auto; gap: 8px 12px; }
   .essay-date { display: none; }
-  .essay-desc { grid-column: 1 / -1; }
   .contact-row { grid-template-columns: 80px 1fr; }
   .home-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
   .is-home .page-border { margin: 0 4px 4px; border-radius: 0 0 6px 6px; }
