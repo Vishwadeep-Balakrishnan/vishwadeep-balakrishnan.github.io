@@ -1,0 +1,101 @@
+---
+title: "Rich Content Demo"
+description: "A demonstration of rich content features — code blocks, tables, math, images, and more."
+pubDate: 2025-04-01
+tag: "Demo"
+tags: ["Demo"]
+draft: false
+---
+
+This essay demonstrates the rich content capabilities of the new Astro + MDX publishing system.
+
+## Code Blocks
+
+Syntax highlighting with Shiki, supporting multiple languages:
+
+```python
+def fibonacci(n: int) -> list[int]:
+    """Generate the first n Fibonacci numbers."""
+    if n <= 0:
+        return []
+    sequence = [0, 1]
+    for _ in range(2, n):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence[:n]
+
+# Example usage
+print(fibonacci(10))
+# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+```javascript
+// A simple async data fetcher
+async function fetchEssays(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+  return response.json();
+}
+```
+
+## Tables
+
+A comparison of different AI safety approaches:
+
+| Approach | Focus | Time Horizon | Funding Source |
+|----------|-------|-------------|----------------|
+| Alignment research | Technical safety | Long-term | Philanthropy |
+| Interpretability | Model internals | Medium-term | Industry + academia |
+| Governance | Policy & regulation | Near-term | Government |
+| Red-teaming | Adversarial testing | Immediate | Industry |
+
+## Mathematics
+
+Inline math works naturally: the expected value $E[X] = \sum_{i} x_i \cdot p(x_i)$ appears within text.
+
+Block equations render centered:
+
+$$
+\mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+$$
+
+The above is the binary cross-entropy loss, fundamental to classification tasks in machine learning.
+
+Another example — the Bellman equation from reinforcement learning:
+
+$$
+V(s) = \max_{a} \left[ R(s, a) + \gamma \sum_{s'} P(s' | s, a) \, V(s') \right]
+$$
+
+## Images
+
+Images can be included with standard Markdown syntax:
+
+![Placeholder for a figure](https://placehold.co/640x360/f7f4ee/726e65?text=Figure+Placeholder)
+
+## Blockquotes
+
+> The questions that interest me most are structural. How do AI systems develop values? How do we build oversight mechanisms that remain robust as these systems become more capable?
+
+## Lists
+
+Key priorities for independent AI research:
+
+- Alignment theory and formal verification
+- Interpretability of large language models
+- Governance frameworks for frontier systems
+- Economic impact analysis of automation
+- Long-horizon safety benchmarks
+
+Numbered steps for evaluating a research agenda:
+
+1. Define the failure mode you are trying to prevent
+2. Identify the minimal technical result that would help
+3. Estimate the counterfactual value of your contribution
+4. Assess whether existing institutions can do this work
+5. If not, determine what resources are needed
+
+## Conclusion
+
+This demo essay shows that the new content system supports all the rich formatting needed for serious technical and analytical writing. Code, math, tables, and images all render cleanly within the existing editorial design.

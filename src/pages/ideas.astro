@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all non-draft essays, sorted by date descending
+const essays = (await getCollection('essays', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Ideas" description="Essays and white papers on AI, technology investing, and global macro.">
+  <main>
+    <div class="ideas-wrap">
+
+      <div class="page-hed fade-up fade-up-0">
+        <span class="page-hed-label">Ideas</span>
+        <h1>Essays &amp; <em>white papers.</em></h1>
+      </div>
+
+      <p class="ideas-intro fade-up fade-up-1">
+        Longer-form thinking on AI, technology investing, and philanthropy.
+        Written for myself first — to understand something — and published
+        in case it's useful to others.
+      </p>
+
+      <div class="essay-list fade-up fade-up-2">
+        {essays.length === 0 ? (
+          <p style="color:var(--ink-4); font-size:0.9rem; padding: 24px 0;">No essays published yet. Check back soon.</p>
+        ) : (
+          essays.map((essay) => {
+            const dateStr = essay.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+            const tag = essay.data.tag || (essay.data.tags.length > 0 ? essay.data.tags[0] : '');
+            return (
+              <a href={`/essays/${essay.id}/`} class="essay-item">
+                <span class="essay-date">{dateStr}</span>
+                <span>
+                  <span class="essay-title">{essay.data.title}</span>
+                  {essay.data.description && <span class="essay-desc">{essay.data.description}</span>}
+                </span>
+                {tag ? <span class="essay-tag">{tag}</span> : <span></span>}
+              </a>
+            );
+          })
+        )}
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
