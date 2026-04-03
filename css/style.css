@@ -563,6 +563,8 @@ main {
   font-weight: 300;
   line-height: 1.92;
   color: var(--ink-2);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .essay-body p { margin-bottom: 1.6rem; }
@@ -657,6 +659,8 @@ main {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .contact-row-val a:hover {
   color: var(--ochre);
@@ -679,26 +683,141 @@ main {
 .fade-up-6 { animation-delay: 0.48s; }
 
 /* ── Responsive ── */
+
+/* Tablet */
 @media (max-width: 768px) {
+  :root { --pad-x: 32px; }
   .board-grid { grid-template-columns: 1fr; }
   .board-grid .board-card:nth-child(odd) { border-right: none; }
   .is-home .page-border { margin: 0 6px 6px; }
+  .about-wrap,
+  .ideas-wrap,
+  .contact-wrap { padding-top: 48px; padding-bottom: 48px; }
+  .essay-wrap { padding-top: 48px; padding-bottom: 56px; }
+  .home-board { padding: 36px 0 0; }
+  .board-card { padding: 32px 28px 36px; }
+  .board-card--full { padding: 32px 28px 36px; }
 }
 
+/* Large phones & small tablets */
 @media (max-width: 580px) {
-  :root { --pad-x: 22px; --nav-h: 52px; }
+  :root { --pad-x: 20px; }
   html { font-size: 15px; }
-  .nav-logo { font-size: 1.22rem; letter-spacing: 0.005em; }
-  .nav-links { gap: 1.4rem; }
-  .nav-links a { font-size: 0.8rem; letter-spacing: 0.01em; }
+
+  /* Nav — two-row stacked layout */
+  nav { height: auto; padding: 10px 0; }
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 0;
+  }
+  .nav-logo {
+    font-size: 1.18rem;
+    letter-spacing: 0.005em;
+    text-align: center;
+  }
+  .nav-links {
+    gap: 1.2rem;
+    justify-content: center;
+    width: 100%;
+  }
+  .nav-links a { font-size: 0.78rem; padding: 4px 0; }
   .theme-toggle { font-size: 0.68rem; padding: 4px 10px; }
-  .board-grid { grid-template-columns: 1fr; }
-  .board-grid .board-card:nth-child(odd) { border-right: none; }
-  .board-card { padding: 28px 24px 32px; }
-  .board-card--full { padding: 28px 24px 32px; }
+
+  /* Home page-border */
+  .is-home .page-border {
+    margin: 0 4px 4px;
+    border-radius: 0 0 6px 6px;
+    min-height: 0;
+  }
+
+  /* Board cards */
+  .board-card { padding: 26px 22px 30px; }
+  .board-card--full { padding: 26px 22px 30px; }
+
+  /* Essay list */
   .essay-item { grid-template-columns: 1fr auto; gap: 8px 12px; }
   .essay-date { display: none; }
+
+  /* Contact */
   .contact-row { grid-template-columns: 80px 1fr; }
+  .contact-rows { max-width: 100%; }
+
+  /* Footer */
   .home-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
-  .is-home .page-border { margin: 0 4px 4px; border-radius: 0 0 6px 6px; }
+
+  /* Vertical rhythm */
+  .about-wrap,
+  .ideas-wrap,
+  .contact-wrap { padding-top: 36px; padding-bottom: 36px; }
+  .essay-wrap { padding-top: 36px; padding-bottom: 40px; }
+  .page-hed { margin-bottom: 28px; padding-bottom: 24px; }
+  .essay-header { margin-bottom: 32px; padding-bottom: 24px; }
+  .about-lede,
+  .ideas-intro,
+  .contact-lede { margin-bottom: 24px; }
+
+  /* Rich content */
+  .essay-body pre { padding: 16px 18px; font-size: 0.78rem; }
+  .essay-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .essay-body .katex-display { font-size: 0.92em; }
+}
+
+/* Narrow phones */
+@media (max-width: 420px) {
+  :root { --pad-x: 16px; }
+
+  .nav-logo { font-size: 1.1rem; }
+  .nav-links { gap: 0.9rem; }
+  .nav-links a { font-size: 0.74rem; }
+  .theme-toggle { font-size: 0.64rem; padding: 3px 8px; }
+
+  .board-card { padding: 22px 18px 26px; }
+  .board-card--full { padding: 22px 18px 26px; }
+  .card-num { top: 14px; right: 16px; }
+  .card-body p { font-size: 0.9rem; }
+
+  .essay-item { padding: 16px 8px; margin: 0 -8px; }
+  .essay-tag { font-size: 0.62rem; }
+
+  /* Contact: stack label above value */
+  .contact-row { grid-template-columns: 1fr; gap: 4px; }
+
+  .home-board { padding: 24px 0 0; }
+  .home-footer { padding: 24px 0 32px; margin-top: 28px; }
+  .is-home .page-border { margin: 0 3px 3px; }
+
+  .about-section { margin-bottom: 24px; padding-bottom: 24px; }
+  .essay-body blockquote { padding-left: 14px; }
+}
+
+/* Very narrow screens (320px class) */
+@media (max-width: 360px) {
+  :root { --pad-x: 14px; }
+
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 0.7rem; }
+  .nav-logo { font-size: 1.02rem; }
+
+  .card-body p { font-size: 0.88rem; }
+  .card-link { font-size: 0.72rem; }
+  .card-label { font-size: 0.64rem; margin-bottom: 14px; }
+
+  .about-lede,
+  .ideas-intro,
+  .contact-lede { font-size: 1.02rem; }
+
+  .essay-body { font-size: 1.02rem; }
+  .essay-lede { font-size: 1.02rem; }
+  .essay-title { font-size: 1.1rem; }
+}
+
+/* Short-height viewports */
+@media (max-height: 600px) {
+  .about-wrap,
+  .ideas-wrap,
+  .contact-wrap { padding-top: 28px; padding-bottom: 28px; }
+  .essay-wrap { padding-top: 28px; padding-bottom: 32px; }
+  .page-hed { margin-bottom: 20px; padding-bottom: 16px; }
+  .home-board { padding: 20px 0 0; }
 }
