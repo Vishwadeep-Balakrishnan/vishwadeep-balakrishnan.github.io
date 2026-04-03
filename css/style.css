@@ -660,7 +660,6 @@ main {
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 .contact-row-val a:hover {
   color: var(--ochre);
