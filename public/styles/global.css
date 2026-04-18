@@ -305,6 +305,44 @@ main {
   color: var(--ink);
 }
 
+/* Inline editorial links (body-copy only) */
+:where(
+  .card-body p a:not(.card-link),
+  .about-lede a,
+  .about-section p a,
+  .ideas-intro a,
+  .contact-lede a,
+  .essay-body :is(p, li, blockquote, figcaption) a:not(.back-link)
+) {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+:where(
+  .card-body p a:not(.card-link),
+  .about-lede a,
+  .about-section p a,
+  .ideas-intro a,
+  .contact-lede a,
+  .essay-body :is(p, li, blockquote, figcaption) a:not(.back-link)
+):visited {
+  color: inherit;
+}
+
+:where(
+  .card-body p a:not(.card-link),
+  .about-lede a,
+  .about-section p a,
+  .ideas-intro a,
+  .contact-lede a,
+  .essay-body :is(p, li, blockquote, figcaption) a:not(.back-link)
+):hover {
+  color: var(--ochre);
+  border-color: var(--ochre-mid);
+}
+
 .card-link {
   display: inline-flex;
   align-items: center;
@@ -420,14 +458,6 @@ main {
   margin-bottom: 0.55rem;
 }
 .about-section p:last-child { margin-bottom: 0; }
-
-.about-section a {
-  color: var(--ochre);
-  text-decoration: none;
-  border-bottom: 1px solid var(--ochre-pale);
-  transition: border-color 0.2s;
-}
-.about-section a:hover { border-color: var(--ochre); }
 
 /* ── IDEAS / ESSAYS ── */
 
@@ -587,8 +617,6 @@ main {
   font-style: italic;
   color: var(--ink-3);
 }
-
-.essay-body a { color: var(--ochre); }
 
 .essay-body code {
   font-family: var(--mono);
