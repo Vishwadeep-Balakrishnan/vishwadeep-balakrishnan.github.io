@@ -306,7 +306,7 @@ main {
 }
 
 /* Inline editorial links (body-copy only) */
-:where(
+:is(
   .card-body p a:not(.card-link),
   .about-lede a,
   .about-section p a,
@@ -320,7 +320,7 @@ main {
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
-:where(
+:is(
   .card-body p a:not(.card-link),
   .about-lede a,
   .about-section p a,
@@ -331,7 +331,7 @@ main {
   color: inherit;
 }
 
-:where(
+:is(
   .card-body p a:not(.card-link),
   .about-lede a,
   .about-section p a,
