@@ -132,6 +132,7 @@ The site deploys automatically to GitHub Pages via GitHub Actions:
 ## Project Structure
 
 ```
+├── CNAME                    ← Custom domain (GitHub Pages needs this at root)
 ├── src/
 │   ├── content/
 │   │   └── essays/          ← Your essay .mdx files live here
@@ -156,9 +157,9 @@ The site deploys automatically to GitHub Pages via GitHub Actions:
 └── README.md
 ```
 
-> **Note:** There are no separate HTML, CSS, or JS files at the root level.
-> Everything is managed through Astro. The `public/` folder contains static
-> assets that are copied as-is to the deployed site.
+> **Note:** The root `CNAME` file is required by GitHub Pages to maintain
+> the custom domain configuration. The copy in `public/CNAME` is also needed
+> so that Astro includes it in the build output. Keep both in sync.
 
 ---
 
