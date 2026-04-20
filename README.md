@@ -6,6 +6,24 @@ Personal website and essay publishing platform built with [Astro](https://astro.
 
 ---
 
+## Quick Editing Guide
+
+Everything you need to edit is in just **two places**. After editing, commit and push to `main` — the site rebuilds and deploys automatically.
+
+| What you want to change | File to edit |
+|---|---|
+| **Home page** text or cards | `src/pages/index.astro` |
+| **About page** text | `src/pages/about.astro` |
+| **Ideas page** intro text | `src/pages/ideas.astro` |
+| **Contact page** text or links | `src/pages/contact.astro` |
+| **Fonts, font sizes, colours, spacing** | `public/styles/global.css` |
+| **Nav links, page title, meta tags** | `src/layouts/BaseLayout.astro` |
+| **Essay content** | `src/content/essays/*.mdx` |
+
+> **Tip:** Every `.astro` file is just HTML with a small frontmatter block at the top (between `---` lines). You can edit the HTML directly — no special syntax needed for text changes.
+
+---
+
 ## Authoring Guide
 
 ### Adding a new essay
@@ -129,12 +147,18 @@ The site deploys automatically to GitHub Pages via GitHub Actions:
 │   │   └── rss.xml.ts       ← RSS feed generator
 │   └── content.config.ts    ← Content collection schema
 ├── public/
-│   ├── styles/global.css    ← Site stylesheet
+│   ├── styles/
+│   │   └── global.css       ← ALL site styles (fonts, sizes, colours, spacing)
 │   ├── CNAME                ← Custom domain config
 │   └── .nojekyll
 ├── astro.config.mjs         ← Astro configuration
-└── package.json
+├── package.json
+└── README.md
 ```
+
+> **Note:** There are no separate HTML, CSS, or JS files at the root level.
+> Everything is managed through Astro. The `public/` folder contains static
+> assets that are copied as-is to the deployed site.
 
 ---
 
