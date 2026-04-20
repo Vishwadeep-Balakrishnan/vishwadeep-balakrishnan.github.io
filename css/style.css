@@ -388,8 +388,8 @@ main {
 .page-hed h1 em { font-style: italic; color: var(--ochre); }
 
 .about-lede {
-  font-size: 1.14rem;
-  line-height: 1.82;
+  font-size: 0.95rem;
+  line-height: 1.78;
   color: var(--ink-2);
   margin-bottom: 40px;
 }
@@ -435,8 +435,8 @@ main {
 }
 
 .ideas-intro {
-  font-size: 1.14rem;
-  line-height: 1.82;
+  font-size: 0.95rem;
+  line-height: 1.78;
   color: var(--ink-2);
   margin-bottom: 40px;
 }
@@ -622,8 +622,8 @@ main {
 }
 
 .contact-lede {
-  font-size: 1.14rem;
-  line-height: 1.82;
+  font-size: 0.95rem;
+  line-height: 1.78;
   color: var(--ink-2);
   margin-bottom: 40px;
 }
@@ -798,7 +798,7 @@ main {
 
   .about-lede,
   .ideas-intro,
-  .contact-lede { font-size: 1.02rem; }
+  .contact-lede { font-size: 0.88rem; }
 
   .essay-body { font-size: 1.02rem; }
   .essay-lede { font-size: 1.02rem; }
