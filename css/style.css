@@ -388,9 +388,7 @@ main {
 .page-hed h1 em { font-style: italic; color: var(--ochre); }
 
 .about-lede {
-  font-family: var(--serif);
   font-size: 1.14rem;
-  font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
   margin-bottom: 40px;
@@ -437,9 +435,7 @@ main {
 }
 
 .ideas-intro {
-  font-family: var(--serif);
   font-size: 1.14rem;
-  font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
   margin-bottom: 40px;
@@ -626,9 +622,7 @@ main {
 }
 
 .contact-lede {
-  font-family: var(--serif);
   font-size: 1.14rem;
-  font-weight: 300;
   line-height: 1.82;
   color: var(--ink-2);
   margin-bottom: 40px;
