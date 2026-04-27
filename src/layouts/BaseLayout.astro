@@ -24,7 +24,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +62,7 @@ const currentPath = Astro.url.pathname;
   <!-- Theme (must be in head to prevent flash) -->
   <script is:inline>
     (function() {
-      var theme = localStorage.getItem('vb-theme') || 'light';
+      var theme = localStorage.getItem('vb-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
@@ -100,7 +100,7 @@ const currentPath = Astro.url.pathname;
         toggle.querySelector('.toggle-icon').textContent = theme === 'dark' ? '☀' : '◐';
       }
 
-      var current = localStorage.getItem('vb-theme') || 'light';
+      var current = localStorage.getItem('vb-theme') || 'dark';
       updateToggle(current);
 
       toggle.addEventListener('click', function() {
