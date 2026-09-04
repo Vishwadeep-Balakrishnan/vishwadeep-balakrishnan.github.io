@@ -2,7 +2,6 @@
 title: "Sample Essay"
 date: 2026-08-24
 description: "A sample entry for the essay archive."
-category: "Essay"
 draft: false
 ---
 
