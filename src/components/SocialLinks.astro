@@ -1,0 +1,69 @@
+---
+const links = [
+  {
+    label: "Email",
+    href: "mailto:vishwadeepb456@gmail.com",
+    icon: "email",
+    external: false,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/vishwadeep",
+    icon: "linkedin",
+    external: true,
+  },
+  {
+    label: "Twitter",
+    href: "https://x.com/vshdeep",
+    icon: "twitter",
+    external: true,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Vishwadeep-Balakrishnan",
+    icon: "github",
+    external: true,
+  },
+] as const;
+---
+
+<aside class="social-block" aria-labelledby="social-links-title">
+  <p id="social-links-title" class="social-label">Elsewhere</p>
+
+  <div class="social-links">
+    {
+      links.map((link) => (
+        <a
+          class="social-link"
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+        >
+          {link.icon === "email" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M3.75 5.75h16.5v12.5H3.75z" fill="none" stroke="currentColor" stroke-width="1.7" />
+              <path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" />
+            </svg>
+          )}
+          {link.icon === "linkedin" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45Z" />
+            </svg>
+          )}
+          {link.icon === "twitter" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M18.24 2.25h3.31l-7.23 8.26 8.51 11.24h-6.66l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z" />
+            </svg>
+          )}
+          {link.icon === "github" && (
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 .7C5.73.7.65 5.78.65 12.05c0 5.02 3.25 9.28 7.76 10.78.57.1.78-.25.78-.55v-2.2c-3.16.69-3.83-1.34-3.83-1.34-.51-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.24 3.31.95.1-.74.4-1.24.72-1.52-2.52-.29-5.17-1.26-5.17-5.61 0-1.24.44-2.25 1.17-3.05-.12-.29-.51-1.44.11-3 0 0 .95-.31 3.12 1.16A10.8 10.8 0 0 1 12 6.11c.97 0 1.93.13 2.84.38 2.17-1.47 3.12-1.16 3.12-1.16.62 1.56.23 2.71.11 3 .73.8 1.17 1.81 1.17 3.05 0 4.36-2.66 5.32-5.19 5.6.41.36.77 1.06.77 2.14v3.17c0 .3.2.66.78.55a11.36 11.36 0 0 0 7.75-10.78C23.35 5.78 18.27.7 12 .7Z" />
+            </svg>
+          )}
+          <span class="social-link-label">{link.label}</span>
+          {link.external && <span class="sr-only"> (opens in a new tab)</span>}
+        </a>
+      ))
+    }
+  </div>
+</aside>

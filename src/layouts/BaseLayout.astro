@@ -1,115 +1,45 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
-  canonicalURL?: string;
-  ogImage?: string;
-  isHome?: boolean;
+  active?: "home" | "essays";
 }
 
 const {
-  title,
-  description = 'Independent AI researcher, founder, and investor.',
-  canonicalURL,
-  ogImage,
-  isHome = false,
+  title = "Vishwadeep Balakrishnan",
+  description = "The personal website of Vishwadeep Balakrishnan — projects, essays, and Silicon Macro.",
+  active,
 } = Astro.props;
 
-const siteTitle = 'Vishwadeep Balakrishnan';
-const resolvedTitle = isHome ? siteTitle : `${title} — ${siteTitle}`;
-const resolvedCanonical = canonicalURL || Astro.url.href;
-
-// Determine current path for active nav
-const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{resolvedTitle}</title>
-  <meta name="description" content={description}>
-  <link rel="canonical" href={resolvedCanonical}>
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content={resolvedTitle}>
-  <meta property="og:description" content={description}>
-  <meta property="og:url" content={resolvedCanonical}>
-  {ogImage && <meta property="og:image" content={ogImage}>}
-  <meta property="og:site_name" content={siteTitle}>
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content={resolvedTitle}>
-  <meta name="twitter:description" content={description}>
-  {ogImage && <meta name="twitter:image" content={ogImage}>}
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- KaTeX CSS for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj3dSU5pBBN/6Y5ywNPdrYOEFhUOSpM8yO2QTTQVA/VPerBKm/gJGNsYJ+" crossorigin="anonymous">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles/global.css">
-
-  <!-- Theme (must be in head to prevent flash) -->
-  <script is:inline>
-    (function() {
-      var theme = localStorage.getItem('vb-theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-</head>
-<body class:list={[{ 'is-home': isHome }]}>
-
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">Vishwadeep Balakrishnan</a>
-      <ul class="nav-links">
-        <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a></li>
-        <li><a href="/about/" class:list={[{ active: currentPath.startsWith('/about') }]}>About</a></li>
-        <li><a href="/ideas/" class:list={[{ active: currentPath.startsWith('/ideas') || currentPath.startsWith('/essays') }]}>Ideas</a></li>
-        <li><a href="/contact/" class:list={[{ active: currentPath.startsWith('/contact') }]}>Contact</a></li>
-        <li>
-          <button class="theme-toggle" aria-label="Toggle theme">
-            <span class="toggle-icon">◐</span>
-            <span class="toggle-label">Dark</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <slot />
-
-  <script is:inline>
-    (function() {
-      var toggle = document.querySelector('.theme-toggle');
-      if (!toggle) return;
-
-      function updateToggle(theme) {
-        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-        toggle.querySelector('.toggle-label').textContent = theme === 'dark' ? 'Light' : 'Dark';
-        toggle.querySelector('.toggle-icon').textContent = theme === 'dark' ? '☀' : '◐';
-      }
-
-      var current = localStorage.getItem('vb-theme') || 'dark';
-      updateToggle(current);
-
-      toggle.addEventListener('click', function() {
-        current = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', current);
-        localStorage.setItem('vb-theme', current);
-        updateToggle(current);
-      });
-    })();
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fdf9f0" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="portfolio-shell">
+      <Header active={active} />
+      <slot />
+      <Footer />
+    </main>
+  </body>
 </html>

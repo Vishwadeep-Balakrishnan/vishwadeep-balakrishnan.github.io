@@ -1,75 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const description = 'Independent AI researcher, founder, and investor.';
+import SocialLinks from "../components/SocialLinks.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Vishwadeep Balakrishnan" description={description} isHome={true}>
+<BaseLayout active="home">
+  <section class="intro" aria-labelledby="introduction-title">
+    <h1 id="introduction-title" class="sr-only">About Vishwadeep Balakrishnan</h1>
 
-  <div class="page-border">
-  <main>
-    <section class="home-board fade-up fade-up-0">
+    <div class="intro-copy">
+      <p>
+        I'm an undergrad studying electrical engineering, and I'm into AI research,
+        writing software, and building awesome engineering projects.
+      </p>
+      <p>My current area of research focuses on Applied AI and VLSI Design.</p>
+      <p>
+        I also run Speculative Commons, a philanthropy organisation grounded in
+        high-risk, high-reward giving, the idea that philanthropic impact follows a
+        statistically fat-tailed distribution. Most interventions do little. A small
+        number matters enormously. The goal is to find and help fund those before
+        consensus.
+      </p>
+      <p>
+        I write Silicon Macro on Substack. A blog covering tech and listed tech
+        companies, some global macro, and compute markets.
+      </p>
+    </div>
 
-      <div class="board-grid">
-
-        <div class="board-card fade-up fade-up-1">
-          <span class="card-num">01</span>
-          <span class="card-label">Research</span>
-          <div class="card-body">
-            <p>I researched on using interpretable AI systems with controlled memory, then stress-tested how memory fails to better understand how models can use it more effectively. My research interests right now are mostly model architecture, mechanistic interpretability and agentic AI.</p>
-            <a href="https://scholar.google.com/citations?user=75e--pAAAAAJ&hl=en" class="card-link">Read my research <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
-          </div>
-        </div>
-
-        <div class="board-card fade-up fade-up-2">
-          <span class="card-num">02</span>
-          <span class="card-label">Advocacy</span>
-          <div class="card-body">
-            <p>I run <a href="https://speccommons.vercel.app" target="_blank" rel="noopener">Speculative Commons</a> — we find asymmetric philanthropic bets that matter most before consensus, and make sure the right money follows.</p>
-        
-          </div>
-        </div>
-
-        <div class="board-card fade-up fade-up-3">
-          <span class="card-num">03</span>
-          <span class="card-label">Building</span>
-          <div class="card-body">
-            <p>May or may not be doing something in stealth. It may or may not involve giving drone swarms a mind of their own and letting them figure out the rest. If that sentence didn't make you nervous and excited at the same time, we probably can't be friends. Onwards and upwards, literally.</p>
-          </div>
-        </div>
-
-        <div class="board-card fade-up fade-up-4">
-          <span class="card-num">04</span>
-          <span class="card-label">Writing</span>
-          <div class="card-body">
-            <p>I write Silicon Macro on Substack, A research newsletter covering global macro and equities. My focus spans the entire Technology, Media, &amp; Telecom value chain, alongside monetary policy, capital flows, fixed income, FX dynamics, and broader equity indices.</p>
-            <a href="https://siliconmacro.substack.com" target="_blank" rel="noopener" class="card-link">Read silicon macro <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="board-card board-card--full fade-up fade-up-5">
-        <span class="card-num">05</span>
-        <span class="card-label">Consulting</span>
-        <div class="card-body">
-          <p>I work with early-stage tech startups on go-to-market strategy, product-market fit, and distribution design. I'm also always happy to chat about anything cool you think I'd find interesting.</p>
-          <a href="https://calendly.com/vishwadeep" target="_blank" rel="noopener" class="card-link">Book an intro call <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
-        </div>
-      </div>
-
-    </section>
-
-    <footer class="home-footer">
-      <p class="footer-copy">&copy; 2026</p>
-      <div class="footer-socials">
-        <a href="https://twitter.com/vshdeep" target="_blank" rel="noopener">Twitter</a>
-        <a href="https://www.linkedin.com/in/vishwadeep-balakrishnan-513a35212/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://siliconmacro.substack.com" target="_blank" rel="noopener">Substack</a>
-      </div>
-    </footer>
-
-  </main>
-  </div>
-
+    <SocialLinks />
+  </section>
 </BaseLayout>

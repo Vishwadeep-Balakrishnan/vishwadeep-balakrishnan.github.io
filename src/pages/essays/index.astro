@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const essays = (await getCollection("essays", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+---
+
+<BaseLayout
+  title="Essays — Vishwadeep Balakrishnan"
+  description="Essays by Vishwadeep Balakrishnan on technology, computing infrastructure, capital allocation, and political economy."
+  active="essays"
+>
+  <section class="essay-archive" aria-labelledby="essays-title">
+    <h1 id="essays-title" class="sr-only">Essays</h1>
+
+    <p class="essay-intro">
+      Writing on technology, computing infrastructure, capital allocation, and
+      political economy.
+    </p>
+
+    <div class="essay-list">
+      {
+        essays.map((essay) => (
+          <article class="essay-row">
+            <h2 class="essay-title">
+              <a href={`/essays/${essay.id}/`}>{essay.data.title}</a>
+            </h2>
+            <time class="essay-date" datetime={essay.data.date.toISOString()}>
+              {formatDate(essay.data.date)}
+            </time>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

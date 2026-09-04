@@ -1,0 +1,57 @@
+---
+interface Props {
+  active?: "home" | "essays";
+}
+
+const { active } = Astro.props;
+
+const navigation = [
+  { label: "Home", href: "/", key: "home" },
+  {
+    label: "Projects",
+    href: "https://github.com/Vishwadeep-Balakrishnan",
+  },
+  { label: "Essays", href: "/essays/", key: "essays" },
+  {
+    label: "Silicon Macro",
+    href: "https://siliconmacro.substack.com",
+    external: true,
+  },
+] as const;
+---
+
+<header class="site-header" aria-label="Site header">
+  <a class="site-name" href="/" aria-label="Vishwadeep Balakrishnan, home">
+    Vishwadeep Balakrishnan
+  </a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    {
+      navigation.map((item) => {
+        const isActive = item.key === active;
+
+        return (
+          <a
+            class:list={[
+              "nav-link",
+              isActive && "nav-link-active",
+              item.external && "nav-link-external",
+            ]}
+            href={item.href}
+            aria-current={isActive ? "page" : undefined}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noopener noreferrer" : undefined}
+          >
+            <span class="nav-link-label">{item.label}</span>
+            {item.external && (
+              <>
+                <span class="external-indicator" aria-hidden="true">↗</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+              </>
+            )}
+          </a>
+        );
+      })
+    }
+  </nav>
+</header>

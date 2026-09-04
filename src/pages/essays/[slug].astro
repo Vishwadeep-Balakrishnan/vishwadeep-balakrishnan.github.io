@@ -1,9 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const essays = await getCollection('essays', ({ data }) => !data.draft);
+  const essays = await getCollection("essays", ({ data }) => !data.draft);
+
   return essays.map((essay) => ({
     params: { slug: essay.id },
     props: { essay },
@@ -13,45 +14,34 @@ export async function getStaticPaths() {
 const { essay } = Astro.props;
 const { Content } = await render(essay);
 
-const tag = essay.data.tag || (essay.data.tags.length > 0 ? essay.data.tags[0] : '');
-const dateStr = essay.data.pubDate.toLocaleDateString('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric'
+const date = essay.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
 });
-const pageTitle = essay.data.title;
-const canonicalURL = new URL(`/essays/${essay.id}/`, Astro.site).href;
 ---
 
 <BaseLayout
-  title={pageTitle}
-  description={essay.data.description}
-  canonicalURL={canonicalURL}
+  title={`${essay.data.title} — Vishwadeep Balakrishnan`}
+  description={essay.data.description ?? essay.data.title}
+  active="essays"
 >
-  <main>
-    <div class="essay-wrap">
+  <article class="article-page">
+    <header class="article-header">
+      <p class="article-meta">
+        <time datetime={essay.data.date.toISOString()}>{date}</time>
+        <span aria-hidden="true">·</span>
+        <span>{essay.data.category}</span>
+      </p>
+      <h1>{essay.data.title}</h1>
+      {essay.data.description && <p class="article-description">{essay.data.description}</p>}
+    </header>
 
-      <div class="essay-header fade-up fade-up-0">
-        <div class="essay-meta">
-          <span>{dateStr}</span>
-          <span class="sep"></span>
-          <span>{tag}</span>
-        </div>
-        <h1>{essay.data.title}</h1>
-        <p class="essay-lede">{essay.data.description}</p>
-      </div>
-
-      <div class="essay-body fade-up fade-up-1">
-        <Content />
-      </div>
-
-      <div class="essay-footer fade-up fade-up-2">
-        <a href="/ideas/" class="back-link">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M10 6H2M6 10L2 6l4-4"/>
-          </svg>
-          Back to Ideas
-        </a>
-      </div>
-
+    <div class="article-body">
+      <Content />
     </div>
-  </main>
+
+    <a class="back-link" href="/essays/">← Back to essays</a>
+  </article>
 </BaseLayout>
